@@ -1,0 +1,25 @@
+
+<mat-card>
+    
+    <!-- FORMULARIO -->
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form [formGroup]="formCreate" (submit)="createProduct()">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome" 
+            formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Preço (R$)" 
+            formControlName="price">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button [disabled]="!formCreate.valid" class="btn">
+                Salvar
+            </button>
+            <button mat-raised-button (click)="cancelaProduct()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+
+</mat-card>
